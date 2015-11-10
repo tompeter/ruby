@@ -1,0 +1,37 @@
+<div class="row">
+  <div id="index">
+  	<div class="col-sm-offset-2 col-md-8">
+      <div class="row panel panel-default">
+        <div class="panel-heading">
+          <%= link_to 'Back', admin_products_path, class: 'btn btn-default btn-xs pull-right'%>
+          <%= link_to 'New', new_admin_brand_path, class: 'btn btn-default btn-xs pull-right' %>
+          <div class="panel-title">
+            Brands
+          </div>
+        </div>
+        <div class="panel-body">
+          <table  class="table table-bordered">  
+            <thead>
+              <tr>
+                <th>Brand</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @brands.each do |l| %> 
+                <tr>
+                  <td><p><%= l.name %></p></td>
+                  <td>
+                    <%= link_to 'Edit', edit_admin_brand_path(l), class: 'btn btn-default btn-xs' %>
+                    <%= link_to 'Delete', admin_brand_path(l), class: 'btn btn-default btn-xs', method: :delete %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <%= paginate @brands %><br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

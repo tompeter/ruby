@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-sm-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <div class="panel-title">
+          Edit
+        </div>
+      </div>
+      <div class="alert-danger">
+        <% if @brand.errors.any? %>
+          <div id="error_explanation">
+            <ul>
+              <% @brand.errors.full_messages.each do |msg| %>
+                <li class="col-md-offset-2">
+                  <%= msg %>
+                </li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+      </div>
+      <div class="panel-body">
+        <%= form_for([:admin, @brand], html: { class: 'form-horizontal', :multipart => true }) do |l| %>
+          <div class="form-group">
+            <label for="Category" class="col-sm-2 control-label">Category</label>
+            <div class="col-sm-10">
+              <%= l.text_field :name, class: 'form-control', placeholder: 'No value' %>
+            </div>
+          </div>
+          <div class="col-md-offset-5 col-md-12">
+            <button type="submit" class="btn btn-default">Update</button>
+            <%= link_to 'Back', admin_brands_path, class: 'btn btn-default'%>
+          </div>
+        <% end %>
+      </div>
+    </div>            
+  </div>
+</div>

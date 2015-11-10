@@ -1,0 +1,36 @@
+<div class="row"> 
+  <div class="col-sm-offset-3 col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <%= link_to 'Delete', admin_product_path, class: 'btn btn-default btn-xs pull-right', method: :delete %>
+        <%= link_to 'Edit', edit_admin_product_path, class: 'btn btn-default btn-xs pull-right' %>
+        <div class="panel-title">
+          Product
+        </div>
+      </div>
+      <div class="panel-body">
+        <table  class="table table-bordered">  
+          <thead></thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="col-md-offset-1">
+                  <%= image_tag @product.avatar.url(:thumb), style: 'height: 100px;' 'width:100px;'%><br>
+                </div>
+              </td>
+              <td><p><%= @product.product_name %></p></td>
+              <td><p><%= @product.product_details %></p></td>
+              <td><p><%= @product.product_no %></p></td>
+              <td><p><%= @product.category.name %></p></td>
+              <td><p><%= @product.brand.name %></p></td> 
+            </tr>
+          </tbody>
+        </table>
+        <div class="col-md-offset-6 ">
+          <%= link_to 'Back', admin_products_path, class: 'btn btn-default'%>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+         
